@@ -130,6 +130,7 @@
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+    <Compile Include="Assets\HealthBarController.cs" />
     <Compile Include="Assets\Scripts\director.cs" />
     <Compile Include="Assets\Scripts\mycamera.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
