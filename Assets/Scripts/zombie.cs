@@ -99,8 +99,6 @@ public class zombie : MonoBehaviour
         {
             anim.Play("attack");
             makePlayerTakeDamage();
-
-
             timeLeft = time;
             // Debug.Log("colliding!!");
         }
