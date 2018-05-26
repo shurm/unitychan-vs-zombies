@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 117
+  controlID: 22
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 46
+  controlID: 23
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 47
+  controlID: 24
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -378,19 +378,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Camera Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Camera Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Mike\Desktop\unitychan vs zombies\unitychan-vs-zombies
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 9c5b0000
-    m_LastClickedID: 23452
-    m_ExpandedIDs: 0000000086370000665000007e53000058540000025600004e5700006e5800007a580000ca5a0000ee5a0000045b00000c5b00000e5b0000105b00002a5b0000465b0000525b0000545b00005e5b00007a5b0000865b0000d05b00002e5c0000305c0000325c00003c5c0000625c0000745c00008a5c0000bc5c0000da5c0000005d0000125d0000165d00002c5d0000845d0000c65d00000c5e0000305e0000925e0000945e0000965e0000985e00009a5e00009c5e00009e5e0000a05e0000a25e0000a45e0000a65e0000a85e0000aa5e0000ac5e0000ae5e0000b05e0000b25e0000b45e0000b65e0000b85e0000ba5e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 116}
+    m_SelectedIDs: 7c2e0000
+    m_LastClickedID: 11900
+    m_ExpandedIDs: 000000004e270000ae270000c2270000d0270000ee2700003028000072280000d0280000d4280000f828000098290000c42900002a2a0000862a0000ee2a0000322b0000a02b0000a42b0000a82b0000fc2b0000e02c0000e82c0000162d0000302d0000862d0000fe2e00003a2f00006a2f0000b82f0000f02f0000fa2f0000243000009430000082310000b031000042320000683200005c330000603400007a4100007c4100007e41000080410000824100008441000086410000884100008a4100008c4100008e41000090410000924100009441000096410000984100009a4100009c4100009e410000a0410000a241000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -418,7 +418,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000086370000665000007e53000058540000025600004e5700006e5800007a580000ca5a0000ee5a0000045b00000c5b00000e5b0000105b00002a5b0000465b0000525b0000545b00005e5b00007a5b0000865b0000d05b00002e5c0000305c0000325c00003c5c0000625c0000745c00008a5c0000bc5c0000da5c0000005d0000125d0000165d00002c5d0000845d0000c65d00000c5e0000305e0000925e0000945e0000965e0000985e00009a5e00009c5e00009e5e0000a05e0000a25e0000a45e0000a65e0000a85e0000aa5e0000ac5e0000ae5e0000b05e0000b25e0000b45e0000b65e0000b85e0000ba5e0000
+    m_ExpandedIDs: 000000004e270000ae270000c2270000d0270000ee2700003028000072280000d0280000d4280000f828000098290000c42900002a2a0000862a0000ee2a0000322b0000a02b0000a42b0000a82b0000fc2b0000e02c0000e82c0000162d0000302d0000862d0000fe2e00003a2f00006a2f0000b82f0000f02f0000fa2f0000243000009430000082310000b031000042320000683200005c330000603400007a4100007c4100007e41000080410000824100008441000086410000884100008a4100008c4100008e41000090410000924100009441000096410000984100009a4100009c4100009e410000a0410000a2410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -534,9 +534,9 @@ MonoBehaviour:
     height: 388
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8039feff
-    m_LastClickedID: -116352
-    m_ExpandedIDs: 5e1efeff8039feffb03bfefff040feff00000000
+    m_SelectedIDs: 32fbffff
+    m_LastClickedID: -1230
+    m_ExpandedIDs: ceafffff1af9ffff2af9ffff64f9ffff04faffffa0faffffe2faffff02fbffff32fbffff1afcffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -586,14 +586,14 @@ MonoBehaviour:
     width: 938
     height: 388
   m_SceneLighting: 1
-  lastFramingTime: 676.8196354011845
+  lastFramingTime: 1543.515674349836
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -30.4, y: 4.77, z: 22.352999}
+    m_Target: {x: -32.051636, y: 1.1766357, z: 23.117676}
     speed: 2
-    m_Value: {x: -30.4, y: 4.77, z: 22.352999}
+    m_Value: {x: -32.051636, y: 1.1766357, z: 23.117676}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -616,13 +616,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.43398643, y: -0.55667603, z: 0.42803788, w: 0.5644067}
+    m_Target: {x: -0.07309277, y: -0.8070249, z: 0.10222456, w: -0.5769992}
     speed: 2
-    m_Value: {x: 0.43398565, y: -0.556675, z: 0.4280371, w: 0.5644057}
+    m_Value: {x: -0.07309242, y: -0.807021, z: 0.102224074, w: -0.57699645}
   m_Size:
-    m_Target: 3.6719356
+    m_Target: 1.3948617
     speed: 2
-    m_Value: 3.6719356
+    m_Value: 1.3948617
   m_Ortho:
     m_Target: 1
     speed: 2
