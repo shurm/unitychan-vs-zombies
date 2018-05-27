@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1520
     height: 715
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 22
+  controlID: 55
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,8 +64,8 @@ MonoBehaviour:
     y: 0
     width: 308
     height: 715
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -90,8 +90,8 @@ MonoBehaviour:
     y: 0
     width: 270
     height: 409
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -207,10 +207,10 @@ MonoBehaviour:
     y: 0
     width: 1212
     height: 715
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 23
+  controlID: 56
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -231,10 +231,10 @@ MonoBehaviour:
     y: 0
     width: 1212
     height: 409
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 24
+  controlID: 57
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -378,19 +378,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Camera Scripts
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Camera Scripts
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Mike\Desktop\unitychan vs zombies\unitychan-vs-zombies
+  m_LastProjectPath: C:\Users\Mike\Desktop\unitychan-vs-zombies
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 116}
-    m_SelectedIDs: 7c2e0000
-    m_LastClickedID: 11900
-    m_ExpandedIDs: 000000004e270000ae270000c2270000d0270000ee2700003028000072280000d0280000d4280000f828000098290000c42900002a2a0000862a0000ee2a0000322b0000a02b0000a42b0000a82b0000fc2b0000e02c0000e82c0000162d0000302d0000862d0000fe2e00003a2f00006a2f0000b82f0000f02f0000fa2f0000243000009430000082310000b031000042320000683200005c330000603400007a4100007c4100007e41000080410000824100008441000086410000884100008a4100008c4100008e41000090410000924100009441000096410000984100009a4100009c4100009e410000a0410000a241000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: b4300000
+    m_LastClickedID: 12468
+    m_ExpandedIDs: 00000000b43000001431000028310000363100005431000096310000d8310000363200003a3200005e320000fe3200002a33000090330000ec3300005434000098340000063500000a3500000e35000062350000463600004e3600007c36000096360000ec36000064380000a0380000d03800001e39000056390000603900008a390000fa390000e83a0000163b0000a83b0000ce3b0000c23c0000c63d00009e4a0000a04a0000a24a0000a44a0000a64a0000a84a0000aa4a0000ac4a0000ae4a0000b04a0000b24a0000b44a0000b64a0000b84a0000ba4a0000bc4a0000be4a0000c04a0000c24a0000c44a0000c64a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -418,7 +418,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e270000ae270000c2270000d0270000ee2700003028000072280000d0280000d4280000f828000098290000c42900002a2a0000862a0000ee2a0000322b0000a02b0000a42b0000a82b0000fc2b0000e02c0000e82c0000162d0000302d0000862d0000fe2e00003a2f00006a2f0000b82f0000f02f0000fa2f0000243000009430000082310000b031000042320000683200005c330000603400007a4100007c4100007e41000080410000824100008441000086410000884100008a4100008c4100008e41000090410000924100009441000096410000984100009a4100009c4100009e410000a0410000a2410000
+    m_ExpandedIDs: 00000000b43000001431000028310000363100005431000096310000d8310000363200003a3200005e320000fe3200002a33000090330000ec3300005434000098340000063500000a3500000e35000062350000463600004e3600007c36000096360000ec36000064380000a0380000d03800001e39000056390000603900008a390000fa390000e83a0000163b0000a83b0000ce3b0000c23c0000c63d00009e4a0000a04a0000a24a0000a44a0000a64a0000a84a0000aa4a0000ac4a0000ae4a0000b04a0000b24a0000b44a0000b64a0000b84a0000ba4a0000bc4a0000be4a0000c04a0000c24a0000c44a0000c64a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000522f000082300000cc310000462e0000e42f000088490000b0490000564a00002628000066320000fe3e00000a3f00007e2c0000e22a000020280000922f000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -534,9 +534,9 @@ MonoBehaviour:
     height: 388
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 32fbffff
-    m_LastClickedID: -1230
-    m_ExpandedIDs: ceafffff1af9ffff2af9ffff64f9ffff04faffffa0faffffe2faffff02fbffff32fbffff1afcffff00000000
+    m_SelectedIDs: 74400000
+    m_LastClickedID: 16500
+    m_ExpandedIDs: e0faffff00000000743f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -586,14 +586,14 @@ MonoBehaviour:
     width: 938
     height: 388
   m_SceneLighting: 1
-  lastFramingTime: 1543.515674349836
+  lastFramingTime: 278.38018941874276
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -32.051636, y: 1.1766357, z: 23.117676}
+    m_Target: {x: 24.695642, y: -0.00000082613747, z: -31.80867}
     speed: 2
-    m_Value: {x: -32.051636, y: 1.1766357, z: 23.117676}
+    m_Value: {x: 24.695642, y: -0.00000082613747, z: -31.80867}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -618,11 +618,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.07309277, y: -0.8070249, z: 0.10222456, w: -0.5769992}
     speed: 2
-    m_Value: {x: -0.07309242, y: -0.807021, z: 0.102224074, w: -0.57699645}
+    m_Value: {x: 0.07309277, y: 0.8070249, z: -0.10222455, w: 0.5769991}
   m_Size:
-    m_Target: 1.3948617
+    m_Target: 6.5850368
     speed: 2
-    m_Value: 1.3948617
+    m_Value: 6.5850368
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -632,7 +632,7 @@ MonoBehaviour:
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
-  m_ViewIsLockedToObject: 0
+  m_ViewIsLockedToObject: 1
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
