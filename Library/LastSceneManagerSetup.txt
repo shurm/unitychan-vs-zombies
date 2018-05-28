@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/scifi.unity
+- path: Assets/FightingUnityChan_FreeAsset/FightingUnityChan_FreeAsset/Scene/FUCMAnimationPreviewFree.unity
   isLoaded: 1
   isActive: 1
