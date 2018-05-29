@@ -95,8 +95,6 @@
     <Compile Include="Assets\Camera Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Camera Scripts\LookAtCamera.cs" />
     <Compile Include="Assets\Camera Scripts\MouseAimCamera.cs" />
-    <Compile Include="Assets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\CameraController.cs" />
-    <Compile Include="Assets\FightingUnityChan_FreeAsset\FightingUnityChan_FreeAsset\Scripts\IdleChanger.cs" />
     <Compile Include="Assets\FootTriggerListener.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />

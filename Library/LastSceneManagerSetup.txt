@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/FightingUnityChan_FreeAsset/FightingUnityChan_FreeAsset/Scene/FUCMAnimationPreviewFree.unity
+- path: Assets/health bar test.unity
   isLoaded: 1
   isActive: 1

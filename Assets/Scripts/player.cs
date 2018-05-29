@@ -69,30 +69,19 @@ public class player : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-
-    }
-
-    public bool isAttacking()
-    {
-        if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("hk") || this.anim.GetCurrentAnimatorStateInfo(0).IsName("hp"))
-        {
-            return true;
-        }
-        return false;
-    }
-
-    void FixedUpdate()
-    {
         if (Input.GetMouseButtonDown(0))
-            anim.Play("hp");
-
+            anim.SetBool("hp", true);
+        else
+            anim.SetBool("hp", false);
         if (Input.GetMouseButtonDown(1))
-            anim.Play("hk");
+            anim.SetBool("hk", true);
+        else
+            anim.SetBool("hk", false);
+        if (isAttacking())
+            anim.speed = 0.7f;
+        else
+            anim.speed = 1f;
 
-        // if (Input.GetMouseButtonDown(2))
-        //   Debug.Log("Pressed middle click.");
-
-        
 
         if (Input.GetKey(KeyCode.LeftShift))
             run = true;
@@ -102,8 +91,8 @@ public class player : MonoBehaviour
         float direction = Input.GetAxis("Horizontal");
 
         float speed = Input.GetAxis("Vertical");
-		if (speed < 0)
-			speed = 0;
+        if (speed < 0)
+            speed = 0;
 
         anim.SetFloat("Speed", speed);
         anim.SetFloat("Direction", direction);
@@ -133,8 +122,19 @@ public class player : MonoBehaviour
         rb.MovePosition(rb.position + speedInAllDirections * moveZ * Time.deltaTime);
         */
         if (speed > 0)
-        transform.position += transform.forward * currentSpeed * Time.deltaTime;
+            transform.position += transform.forward * currentSpeed * Time.deltaTime;
     }
+
+    public bool isAttacking()
+    {
+        if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("hk") || this.anim.GetCurrentAnimatorStateInfo(0).IsName("hp"))
+        {
+            return true;
+        }
+        return false;
+    }
+
+   
 
     void FadeAnimation()
     {
