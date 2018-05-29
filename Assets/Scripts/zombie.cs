@@ -32,6 +32,8 @@ public class zombie : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         dead = false;
+        if (target == null)
+            target = GameObject.Find("unitychan").transform;
     }
 
     // Update is called once per frame
