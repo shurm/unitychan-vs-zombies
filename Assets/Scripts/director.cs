@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class director : MonoBehaviour {
 
-    public Transform player;
+    public GameObject player;
 
-    public Transform zombie;
+    public GameObject zombie;
 
     public int startTotalZombies;
     public int zombieIncrease;
@@ -17,11 +17,25 @@ public class director : MonoBehaviour {
     private int numberOfZombiesCreated, numberOfZombiesKilled;
 
     private int maxLevelZombies;
-    public Transform[] zombieSpawnLocations;
+    private Transform[] zombieSpawnLocations;
+
+    public Radar radar;
 
     private readonly object syncLock = new object();
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        zombieSpawnLocations = new Transform[transform.childCount];
+
+        for (int a = 0;  a < zombieSpawnLocations.Length; a++)
+        {
+            zombieSpawnLocations[a] = transform.GetChild(a);
+        }
+
+        radar = GameObject.Find("Radar").GetComponent<Radar>();
+
+        player = GameObject.Find("unitychan");
+
 
         timeLeft = 0;
 
@@ -39,8 +53,12 @@ public class director : MonoBehaviour {
             { 
                 for (int a = 0; numberOfZombiesCreated < maxLevelZombies && a < zombieSpawnLocations.Length; a++)
                 {
-                    Transform t = Instantiate(zombie, zombieSpawnLocations[a].position, Quaternion.identity);
-                    t.gameObject.SetActive(true);
+                    GameObject newZombie = Instantiate(zombie, zombieSpawnLocations[a].position, Quaternion.identity);
+
+                    newZombie.GetComponent<zombie>().target = player.transform;
+
+                    radar.RegisterRadarObject(newZombie);
+
                     numberOfZombiesCreated++;
                 }
                 timeLeft = seconds;

@@ -27,13 +27,17 @@ public class zombie : MonoBehaviour
     private bool dead;
 
     private float timeLeft = 0;
+
+    private Radar radar;
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         dead = false;
         if (target == null)
             target = GameObject.Find("unitychan").transform;
+        radar = GameObject.Find("Radar").GetComponent<Radar>();
     }
 
     // Update is called once per frame
@@ -41,15 +45,14 @@ public class zombie : MonoBehaviour
       
         if(agent.isOnOffMeshLink)
         {
-            Debug.Log("Off Mesh link!");
+            //Debug.Log("Off Mesh link!");
             agent.isStopped = true;
            
-                Debug.Log("Reset Path");
+            //Debug.Log("Reset Path");
             OffMeshLinkData data = agent.currentOffMeshLinkData;
-            Debug.Log(data.endPos);
-            //offMeshLink.costOverride = Mathf.Infinity;
-                agent.SetDestination(target.position);
-                agent.isStopped = false;
+           
+            agent.SetDestination(target.position);
+            agent.isStopped = false;
             
             
         }
@@ -72,11 +75,10 @@ public class zombie : MonoBehaviour
         else
             agent.SetDestination(transform.position);
     }
-    void makeZombieDisappear()
+    void RemoveZombie()
     {
-        Destroy(transform.gameObject);
-
-
+        radar.RemoveRaderObject(gameObject);
+        Destroy(gameObject);
     }
 
     bool zombieIsCloseEnough()

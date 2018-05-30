@@ -138,9 +138,11 @@
     <Compile Include="Assets\Scripts\HealthBarController.cs" />
     <Compile Include="Assets\Scripts\mycamera.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovementController.cs" />
     <Compile Include="Assets\Scripts\Radar.cs" />
     <Compile Include="Assets\Scripts\zombie.cs" />
     <Compile Include="Assets\TestZombieSpawn.cs" />
+    <Compile Include="Assets\TriggerTest.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />

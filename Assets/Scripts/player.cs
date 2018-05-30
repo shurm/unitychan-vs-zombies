@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class player : MonoBehaviour
 {
     public float runSpeed = 3;
-    public float walkSpeed = 5;
+    public float walkSpeed = 2;
 
     private float currentSpeed;
 
