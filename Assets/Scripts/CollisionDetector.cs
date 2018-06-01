@@ -23,7 +23,7 @@ public class CollisionDetector : MonoBehaviour {
     {
         if(other.gameObject.CompareTag(TagOfTarget))
         {
-            specialCollisionHandler.HandleCollision();
+            specialCollisionHandler.HandleCollision(other.gameObject);
         }
     }
 
@@ -31,7 +31,7 @@ public class CollisionDetector : MonoBehaviour {
     {
         if (other.gameObject.CompareTag(TagOfTarget))
         {
-            specialCollisionHandler.HandleCollision();
+            specialCollisionHandler.HandleCollision(other.gameObject);
         }
     }
 
@@ -39,7 +39,7 @@ public class CollisionDetector : MonoBehaviour {
     {
         if (other.gameObject.CompareTag(TagOfTarget))
         {
-            specialCollisionHandler.HandleCollision();
+            specialCollisionHandler.HandleCollision(other.gameObject);
         }
     }
 }

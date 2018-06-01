@@ -96,6 +96,7 @@
     <Compile Include="Assets\Camera Scripts\LookAtCamera.cs" />
     <Compile Include="Assets\Camera Scripts\MouseAimCamera.cs" />
     <Compile Include="Assets\CollisionHandleTest.cs" />
+    <Compile Include="Assets\DamageManager.cs" />
     <Compile Include="Assets\FootTriggerListener.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
@@ -135,15 +136,16 @@
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-    <Compile Include="Assets\Prefabs\SpecialCollisionHandler.cs" />
     <Compile Include="Assets\Scripts\CollisionDetector.cs" />
     <Compile Include="Assets\Scripts\director.cs" />
     <Compile Include="Assets\Scripts\HealthBarController.cs" />
-    <Compile Include="Assets\Scripts\mycamera.cs" />
+    <Compile Include="Assets\Scripts\LevelTextDisplayer.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementController.cs" />
     <Compile Include="Assets\Scripts\Radar.cs" />
+    <Compile Include="Assets\Scripts\SpecialCollisionHandler.cs" />
     <Compile Include="Assets\Scripts\zombie.cs" />
+    <Compile Include="Assets\Scripts\ZombieCollisionHandler.cs" />
     <Compile Include="Assets\TestZombieSpawn.cs" />
     <Compile Include="Assets\TriggerTest.cs" />
     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />

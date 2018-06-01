@@ -16,7 +16,7 @@ public class CollisionHandleTest : SpecialCollisionHandler {
 	}
 
 
-    public override void HandleCollision()
+    public override void HandleCollision(GameObject gameObject)
     {
         Debug.Log("it works");
     }
