@@ -12,7 +12,7 @@ public class LevelTextDisplayer : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-        //FadeAnimation();
+        FadeAnimation();
     }
 	
 	// Update is called once per frame
