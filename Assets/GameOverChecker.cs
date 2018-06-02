@@ -15,7 +15,7 @@ public class GameOverChecker : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        playersHealth = GetComponent<Health>();
+        playersHealth = player.GetComponent<Health>();
     }
 	
 	// Update is called once per frame

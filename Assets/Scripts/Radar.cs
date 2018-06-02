@@ -20,6 +20,7 @@ public class Radar : MonoBehaviour
     public List<TagImagePair> recognizedTagImagePairs;
 
     private List<RaderObject> radarObjects = new List<RaderObject>();
+
     public float mapScale = 1.0f;
     
 
@@ -50,6 +51,8 @@ public class Radar : MonoBehaviour
         {
             if (ro.owner != gameObject)
                 tempList.Add(ro);
+            else
+                Destroy(ro.icon);
         }
 
         radarObjects = tempList;
@@ -75,5 +78,10 @@ public class Radar : MonoBehaviour
 	void Update () {
         DrawRadarDots();
 
+    }
+
+    public bool NoObjectsOnMap()
+    {
+        return radarObjects.Count == 0;
     }
 }

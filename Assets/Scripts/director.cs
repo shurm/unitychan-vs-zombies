@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class director : MonoBehaviour {
 
-    public GameObject player;
+    
 
     public GameObject zombie;
 
@@ -19,7 +19,8 @@ public class director : MonoBehaviour {
     private int maxLevelZombies;
     private Transform[] zombieSpawnLocations;
 
-    public Radar radar;
+    private Radar radar;
+    private GameObject player;
 
     private readonly object syncLock = new object();
     // Use this for initialization
@@ -55,7 +56,11 @@ public class director : MonoBehaviour {
                 {
                     GameObject newZombie = Instantiate(zombie, zombieSpawnLocations[a].position, Quaternion.identity);
 
-                    newZombie.GetComponent<zombie>().target = player.transform;
+                    //newZombie.GetComponent<zombie>().target = player.transform;
+
+                    newZombie.GetComponent<GeneralZombieBehavior>().target = player.transform;
+
+                    newZombie.GetComponent<GeneralZombieBehavior>().radar = radar;
 
                     radar.RegisterRadarObject(newZombie);
 

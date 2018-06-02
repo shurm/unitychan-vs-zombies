@@ -5,20 +5,29 @@ using UnityEngine.UI;
 
 public class LevelTextDisplayer : MonoBehaviour
 {
+    public Radar radar;
     public Text levelText;
     public int currentLevel = 1;
 
     public float textTime = 1f;
 
+    private bool fadeAnimationRunning = false;
+
     // Use this for initialization
     void Start () {
+        fadeAnimationRunning = true;
         FadeAnimation();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
+		if(!fadeAnimationRunning && radar.NoObjectsOnMap())
+        {
+            currentLevel++;
+            fadeAnimationRunning = true;
+            FadeAnimation();
+        }
 	}
 
     public void nextLevelAnimation()
@@ -49,6 +58,7 @@ public class LevelTextDisplayer : MonoBehaviour
     void helperZero()
     {
         StartCoroutine(FadeTextToZeroAlpha());
+        fadeAnimationRunning = false;
     }
 
     IEnumerator FadeTextToFullAlpha()
