@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/scifi.unity
+- path: Assets/FightingMotionsVolume1/Scenes/AllMotions.unity
   isLoaded: 1
   isActive: 1
