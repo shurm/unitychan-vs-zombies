@@ -135,6 +135,7 @@
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\GameOverChecker.cs" />
+    <Compile Include="Assets\InputTest.cs" />
     <Compile Include="Assets\Scripts\CollisionDetector.cs" />
     <Compile Include="Assets\Scripts\director.cs" />
     <Compile Include="Assets\Scripts\GeneralZombieBehavior.cs" />
