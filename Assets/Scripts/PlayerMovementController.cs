@@ -72,14 +72,7 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    public bool IsAttacking()
-    {
-        AnimatorStateInfo animatorStateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        if (animatorStateInfo.IsName("hk") || animatorStateInfo.IsName("hp"))
-            return true;
-      
-        return false;
-    }
+    
 
 
     public void PlayDeadAnimation()

@@ -38,14 +38,18 @@ public class GeneralZombieBehavior : MonoBehaviour
     void Update()
     {
 
+        /*
         if (!dead)
         {
             agent.SetDestination(target.position);
-            transform.LookAt(agent.nextPosition);
+            if (agent.remainingDistance < 1.0f)
+                transform.LookAt(target.position);
+            else
+                transform.LookAt(agent.nextPosition);
         }
         else
             agent.isStopped = true;
-            //agent.SetDestination(transform.position);
+          */  
     }
 
     public bool IsDead()

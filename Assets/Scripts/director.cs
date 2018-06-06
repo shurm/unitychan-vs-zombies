@@ -71,7 +71,7 @@ public class director : MonoBehaviour {
         }
         timeLeft -= Time.deltaTime;
 
-      //  Debug.Log("killed : "+numberOfZombiesKilled +" , created: " + numberOfZombiesCreated + " , max: " + maxLevelZombies);
+     //  Debug.Log("killed : "+numberOfZombiesKilled +" , created: " + numberOfZombiesCreated + " , max: " + maxLevelZombies);
 	}
 
     public void zombieDead()

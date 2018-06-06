@@ -2,28 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackManager : SpecialCollisionHandler
+public class PlayerAttackManager : MonoBehaviour
 {
-    private PlayerMovementController playerMovementController;
-
+    //public Dictionary<string,string> attackStateNames = [];
     public int attackDamage = 1;
+    private Animator anim;
 
     // Use this for initialization
     void Start ()
     {
-        playerMovementController = GetComponent<PlayerMovementController>();
+        anim = GetComponent<Animator>();
     }
 
-    public override void HandleCollision(GameObject gameObject)
+    void HandleCollision(GameObject gameObject)
     {
 
         //if player is attacking
-        if(playerMovementController.IsAttacking())
+        if(IsAttacking())
         {
             GeneralZombieBehavior script = gameObject.GetComponentInParent<GeneralZombieBehavior>();
             script.DamageZombie(attackDamage);
         }
     }
 
- 
+    void OnTriggerEnter(Collider other)
+    {
+        HandleCollision(other.gameObject);
+    }
+
+
+    public bool IsAttacking()
+    {
+        AnimatorClipInfo animatorStateInfo = anim.GetCurrentAnimatorClipInfo(0)[0];
+        string AnimatorClipName = animatorStateInfo.clip.name;
+        
+        if (AnimatorClipName.StartsWith("Punch") || AnimatorClipName.StartsWith("Kick"))
+            return true;
+        return false;
+    }
+
+
 }

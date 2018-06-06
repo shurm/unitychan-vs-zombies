@@ -11,24 +11,26 @@ public class CollisionDetector : MonoBehaviour {
 	void Start ()
     {
         specialCollisionHandler = GetComponentInParent<SpecialCollisionHandler>();
-
+        //Debug.Log("collison detector for "+name);
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
+    
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag(TagOfTarget))
+        Debug.Log(gameObject.name + " colliding with " + other.gameObject.name);
+        if (other.gameObject.CompareTag(TagOfTarget))
         {
             specialCollisionHandler.HandleCollision(other.gameObject);
         }
     }
-
+    
     void OnCollisionEnter(Collision other)
     {
+        Debug.Log(gameObject.name +" colliding with "+other.gameObject.name);
         if (other.gameObject.CompareTag(TagOfTarget))
         {
             specialCollisionHandler.HandleCollision(other.gameObject);
@@ -37,9 +39,11 @@ public class CollisionDetector : MonoBehaviour {
 
     void OnCollisionStay(Collision other)
     {
+        Debug.Log(gameObject.name + " colliding with " + other.gameObject.name);
         if (other.gameObject.CompareTag(TagOfTarget))
         {
             specialCollisionHandler.HandleCollision(other.gameObject);
         }
     }
+    
 }

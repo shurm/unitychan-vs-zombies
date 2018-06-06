@@ -3,23 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ZombieCollisionHandler : SpecialCollisionHandler
+public class ZombieCollisionHandler : MonoBehaviour
 {
-    public readonly int angleFaceing = 40;
+    public int angleFaceing = 40;
+    public string TagOfTarget;
+
 
     private NavMeshAgent navMeshAgent;
-    private int damage = 4;
-    public override void HandleCollision(GameObject gameObject)
+    private int damage = 1;
+    void HandleCollision(GameObject gameObject)
     {
-        gameObject.GetComponent<Health>();
+        if (!(gameObject.CompareTag(TagOfTarget)))
+            return;
+
+        Health playersHealth = gameObject.GetComponentInParent<Health>();
+       
         if (!navMeshAgent.isStopped && facingEachOther(gameObject))
         {
             //anim.Play("attack");
+           Debug.Log("damaged "+playersHealth.name);
 
-            gameObject.GetComponent<Health>().DealDamage(damage);
+           playersHealth.DealDamage(damage);
             //timeLeft = time;
             // Debug.Log("colliding!!");
         }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        HandleCollision(other.gameObject);
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        HandleCollision(other.gameObject);
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        HandleCollision(other.gameObject);
     }
 
     private bool facingEachOther(GameObject gameObject)
