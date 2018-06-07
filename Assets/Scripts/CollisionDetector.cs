@@ -19,9 +19,10 @@ public class CollisionDetector : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(gameObject.name + " colliding with " + other.gameObject.name);
+        
         if (other.gameObject.CompareTag(specialCollisionHandler.TagOfTarget))
         {
+            Debug.Log(gameObject.name + " colliding with " + other.gameObject.name);
             AnimatorStateInfo currentAnimatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
             foreach (string stateName in attackingStateNames)
             {
