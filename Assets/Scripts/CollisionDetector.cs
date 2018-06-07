@@ -2,48 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionDetector : MonoBehaviour {
-
-    public string TagOfTarget;
-
+public class CollisionDetector : MonoBehaviour
+{
+    public string[] attackingStateNames;
+    
     private SpecialCollisionHandler specialCollisionHandler;
+
+    private Animator animator;
+
 	// Use this for initialization
 	void Start ()
     {
         specialCollisionHandler = GetComponentInParent<SpecialCollisionHandler>();
-        //Debug.Log("collison detector for "+name);
+        animator = GetComponentInParent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
     
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(gameObject.name + " colliding with " + other.gameObject.name);
-        if (other.gameObject.CompareTag(TagOfTarget))
+        if (other.gameObject.CompareTag(specialCollisionHandler.TagOfTarget))
         {
-            specialCollisionHandler.HandleCollision(other.gameObject);
+            AnimatorStateInfo currentAnimatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            foreach (string stateName in attackingStateNames)
+            {
+                if(currentAnimatorStateInfo.IsName(stateName))
+                {
+                    specialCollisionHandler.HandleCollision(other.gameObject);
+                    return;
+                }
+            }      
         }
     }
-    
-    void OnCollisionEnter(Collision other)
-    {
-        Debug.Log(gameObject.name +" colliding with "+other.gameObject.name);
-        if (other.gameObject.CompareTag(TagOfTarget))
-        {
-            specialCollisionHandler.HandleCollision(other.gameObject);
-        }
-    }
-
-    void OnCollisionStay(Collision other)
-    {
-        Debug.Log(gameObject.name + " colliding with " + other.gameObject.name);
-        if (other.gameObject.CompareTag(TagOfTarget))
-        {
-            specialCollisionHandler.HandleCollision(other.gameObject);
-        }
-    }
-    
+   
 }
