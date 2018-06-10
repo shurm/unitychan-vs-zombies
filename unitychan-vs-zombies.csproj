@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AgentLinkMover.cs" />
+    <Compile Include="Assets\AnimatorTest.cs" />
     <Compile Include="Assets\Camera Scripts\DungeonCamera.cs" />
     <Compile Include="Assets\Camera Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Camera Scripts\LookAtCamera.cs" />
