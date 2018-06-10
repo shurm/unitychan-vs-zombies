@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ErbGameArt\AnimeWeapon\Shaders\SwordLightning.shader" />
+    <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
@@ -171,7 +172,9 @@
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\Sci-fi_platforms\Sci-fi_platforms.txt" />
+    <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />

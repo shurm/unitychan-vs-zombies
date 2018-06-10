@@ -96,6 +96,7 @@
     <Compile Include="Assets\Camera Scripts\LookAtCamera.cs" />
     <Compile Include="Assets\Camera Scripts\MouseAimCamera.cs" />
     <Compile Include="Assets\CollisionHandleTest.cs" />
+    <Compile Include="Assets\DisplayScore.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -136,17 +137,30 @@
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\GameOverChecker.cs" />
     <Compile Include="Assets\InputTest.cs" />
+    <Compile Include="Assets\MainMenuTest2.cs" />
+    <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\CollisionDetector.cs" />
     <Compile Include="Assets\Scripts\director.cs" />
+    <Compile Include="Assets\Scripts\DragMe.cs" />
+    <Compile Include="Assets\Scripts\DragPanel.cs" />
+    <Compile Include="Assets\Scripts\DropMe.cs" />
     <Compile Include="Assets\Scripts\GeneralZombieBehavior.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\HealthBarController.cs" />
     <Compile Include="Assets\Scripts\LevelTextDisplayer.cs" />
+    <Compile Include="Assets\Scripts\MainMenuTest.cs" />
+    <Compile Include="Assets\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\PlayerAttackManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementController.cs" />
     <Compile Include="Assets\Scripts\Radar.cs" />
+    <Compile Include="Assets\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\SpecialCollisionHandler.cs" />
+    <Compile Include="Assets\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\zombie.cs" />
     <Compile Include="Assets\Scripts\ZombieCollisionHandler.cs" />
     <Compile Include="Assets\TestZombieSpawn.cs" />
@@ -160,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ErbGameArt\AnimeWeapon\Shaders\SwordLightning.shader" />
+    <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
@@ -237,7 +252,9 @@
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
+    <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\Sci-fi_platforms\Sci-fi_platforms.txt" />
+    <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />

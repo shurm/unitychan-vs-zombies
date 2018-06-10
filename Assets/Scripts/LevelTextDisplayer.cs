@@ -11,38 +11,26 @@ public class LevelTextDisplayer : MonoBehaviour
 
     public float textTime = 1f;
 
-    private bool fadeAnimationRunning = false;
-
+   
     // Use this for initialization
-    void Start () {
-        fadeAnimationRunning = true;
+    void Start ()
+    {    
         FadeAnimation();
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-		if(!fadeAnimationRunning && radar.NoObjectsOnMap())
-        {
-            currentLevel++;
-            fadeAnimationRunning = true;
-            FadeAnimation();
-        }
-	}
-
-    public void nextLevelAnimation()
+    public void StartNextLevelAnimation()
     {
         currentLevel++;
         setLevelText();
         FadeAnimation();
     }
 
-    void setLevelText()
+    private void setLevelText()
     {
         levelText.text = "Level " + currentLevel;
     }
    
-    void FadeAnimation()
+    private void FadeAnimation()
     {
         if (levelText != null)
         {
@@ -50,18 +38,18 @@ public class LevelTextDisplayer : MonoBehaviour
             Invoke("helperZero", 4f);
         }
     }
-    void helperFull()
+    private void helperFull()
     {
 
         StartCoroutine(FadeTextToFullAlpha());
     }
-    void helperZero()
+    private void helperZero()
     {
         StartCoroutine(FadeTextToZeroAlpha());
-        fadeAnimationRunning = false;
+        
     }
 
-    IEnumerator FadeTextToFullAlpha()
+    private IEnumerator FadeTextToFullAlpha()
     {
         levelText.color = new Color(levelText.color.r, levelText.color.g, levelText.color.b, 0);
         while (levelText.color.a < 1.0f)
@@ -71,7 +59,7 @@ public class LevelTextDisplayer : MonoBehaviour
         }
     }
 
-    IEnumerator FadeTextToZeroAlpha()
+    private IEnumerator FadeTextToZeroAlpha()
     {
         levelText.color = new Color(levelText.color.r, levelText.color.g, levelText.color.b, 1);
         while (levelText.color.a > 0.0f)

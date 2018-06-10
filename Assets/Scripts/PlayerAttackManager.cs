@@ -5,20 +5,39 @@ using UnityEngine;
 
 public class PlayerAttackManager : SpecialCollisionHandler
 {
-    public int attackDamage = 1;
-    
-    private Animator anim;
+    public int zombiePoints = 10;
 
+    public int attackDamage = 1;
+
+    public DisplayScore score;
+
+    public LevelTextDisplayer LevelTextDisplayer;
+
+    private director zombieSpawnScript;
 
     // Use this for initialization
     void Start ()
     {
-        anim = GetComponent<Animator>();
+        zombieSpawnScript = GameObject.Find("ZombieSpawnLocations").GetComponent<director>();
     }
 
     public override void HandleCollision(GameObject gameObject)
     {
         GeneralZombieBehavior script = gameObject.GetComponentInParent<GeneralZombieBehavior>();
-        script.DamageZombie(attackDamage); 
+        bool zombieDestroyed = script.DamageZombie(attackDamage);
+
+        if (zombieDestroyed)
+        {
+            score.UpdateScore(zombiePoints);
+
+            /*
+            if()
+            {
+
+                LevelTextDisplayer.StartNextLevelAnimation();
+            }
+            */
+        }
+
     }
 }

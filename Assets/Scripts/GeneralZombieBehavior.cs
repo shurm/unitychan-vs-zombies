@@ -38,7 +38,7 @@ public class GeneralZombieBehavior : MonoBehaviour
     void Update()
     {
 
-        /*
+        
         if (!dead)
         {
             agent.SetDestination(target.position);
@@ -49,7 +49,7 @@ public class GeneralZombieBehavior : MonoBehaviour
         }
         else
             agent.isStopped = true;
-          */  
+           
     }
 
     public bool IsDead()
@@ -63,7 +63,7 @@ public class GeneralZombieBehavior : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void DamageZombie(int damage)
+    public bool DamageZombie(int damage)
     {
         hitsItCanTake -= damage;
 
@@ -74,7 +74,10 @@ public class GeneralZombieBehavior : MonoBehaviour
             //director.GetComponent<director>().zombieDead();
             //target.GetComponent<player>().increaseScore();
             Invoke("RemoveZombie", 1.2f);
+
+            return true;
         }
+        return false;
     }
 
 }
