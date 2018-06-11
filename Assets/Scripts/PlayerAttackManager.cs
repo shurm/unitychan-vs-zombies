@@ -15,6 +15,10 @@ public class PlayerAttackManager : SpecialCollisionHandler
     public override void HandleStartOfCollision(GameObject gameObject)
     {
         GeneralZombieBehavior script = gameObject.GetComponentInParent<GeneralZombieBehavior>();
+        ZombieCollisionHandler zombieAttackScript = gameObject.GetComponentInParent<ZombieCollisionHandler>();
+        zombieAttackScript.CurrentlyBeingAttacked = true;
+
+
         NavMeshAgent navMeshAgentScript = gameObject.GetComponentInParent<NavMeshAgent>();
         navMeshAgentScript.isStopped = true;
 
@@ -30,5 +34,8 @@ public class PlayerAttackManager : SpecialCollisionHandler
     {
         NavMeshAgent navMeshAgentScript = gameObject.GetComponentInParent<NavMeshAgent>();
         navMeshAgentScript.isStopped = false;
+
+        ZombieCollisionHandler zombieAttackScript = gameObject.GetComponentInParent<ZombieCollisionHandler>();
+        zombieAttackScript.CurrentlyBeingAttacked = false;
     }
 }

@@ -23,7 +23,7 @@ public class CollisionDetector : MonoBehaviour
         
         if (other.gameObject.CompareTag(specialCollisionHandler.TagOfTarget))
         {
-            Debug.Log(gameObject.name + " colliding with " + other.gameObject.name);
+            //Debug.Log(gameObject.name + " colliding with " + other.gameObject.name);
             AnimatorStateInfo currentAnimatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
             foreach (string stateName in attackingStateNames)
             {

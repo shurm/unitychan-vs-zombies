@@ -5,19 +5,49 @@ using UnityEngine.AI;
 
 public class ZombieCollisionHandler : MonoBehaviour
 {
+    public float damageDelay;
+
+    private float damageDelayCopy;
+
     public int angleFaceing = 40;
     public string TagOfTarget;
 
     private GeneralZombieBehavior zombieBehavior;
 
     //private NavMeshAgent navMeshAgent;
-    private int damage = 1;
+    public int damagePlayerTakes = 5;
+
+    private bool currentlyBeingAttacked = false;
+
+    private Animator anim;
+
+    public bool CurrentlyBeingAttacked
+    {
+        get
+        {
+            return currentlyBeingAttacked;
+        }
+
+        set
+        {
+            currentlyBeingAttacked = value;
+        }
+    }
 
     // Use this for initialization
     void Start()
     {
         //navMeshAgent = GetComponent<NavMeshAgent>();
         zombieBehavior = GetComponent<GeneralZombieBehavior>();
+        anim = GetComponent<Animator>();
+        damageDelayCopy = damageDelay;
+        damageDelay = 0;
+    }
+
+    void Update()
+    {
+        if (damageDelay > 0)
+            damageDelay -= Time.deltaTime;
     }
 
     void HandleCollision(GameObject gameObject)
@@ -27,17 +57,23 @@ public class ZombieCollisionHandler : MonoBehaviour
 
         Health playersHealth = gameObject.GetComponentInParent<Health>();
        
-        if (!zombieBehavior.IsDead() && facingEachOther(gameObject))
+        if (!currentlyBeingAttacked && !zombieBehavior.IsDead() && damageDelay <= 0)
         {
-            //anim.Play("attack");
+           anim.Play("attack");
            Debug.Log("damaged "+playersHealth.name);
 
-           playersHealth.DealDamage(damage);
-            //timeLeft = time;
+           playersHealth.DealDamage(damagePlayerTakes);
+           damageDelay = damageDelayCopy;
+           
             // Debug.Log("colliding!!");
         }
     }
     void OnTriggerEnter(Collider other)
+    {
+        HandleCollision(other.gameObject);
+    }
+
+    void OnTriggerStay(Collider other)
     {
         HandleCollision(other.gameObject);
     }
@@ -52,6 +88,7 @@ public class ZombieCollisionHandler : MonoBehaviour
         HandleCollision(other.gameObject);
     }
 
+    //Should just care if zombie is facing player
     private bool facingEachOther(GameObject gameObject)
     {
         if (Mathf.Abs(Vector3.Angle(transform.forward, gameObject.transform.forward) - 180) < angleFaceing)

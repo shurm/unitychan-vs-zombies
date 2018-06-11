@@ -159,6 +159,7 @@
     <Compile Include="Assets\Unity UI\Scripts\DragMe.cs" />
     <Compile Include="Assets\Unity UI\Scripts\DragPanel.cs" />
     <Compile Include="Assets\Unity UI\Scripts\DropMe.cs" />
+    <Compile Include="Assets\Unity UI\Scripts\ImageLoader.cs" />
     <Compile Include="Assets\Unity UI\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Unity UI\Scripts\ResizePanel.cs" />
     <Compile Include="Assets\Unity UI\Scripts\ScrollDetailTexture.cs" />
