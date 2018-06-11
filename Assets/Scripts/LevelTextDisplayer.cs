@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,26 +11,25 @@ public class LevelTextDisplayer : MonoBehaviour
     public int currentLevel = 1;
 
     public float textTime = 1f;
-
-   
-    // Use this for initialization
-    void Start ()
-    {    
-        FadeAnimation();
-    }
 	
-    public void StartNextLevelAnimation()
-    {
-        currentLevel++;
-        setLevelText();
-        FadeAnimation();
-    }
+   
 
     private void setLevelText()
     {
         levelText.text = "Level " + currentLevel;
     }
-   
+
+    internal void IncrementLevel()
+    {
+        currentLevel++;
+    }
+
+    internal void StartLevelTextAnimation()
+    {
+        setLevelText();
+        FadeAnimation();
+    }
+
     private void FadeAnimation()
     {
         if (levelText != null)

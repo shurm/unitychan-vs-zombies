@@ -84,4 +84,9 @@ public class Radar : MonoBehaviour
     {
         return radarObjects.Count == 0;
     }
+
+    public int GetObjectsOnMapCount()
+    {
+        return radarObjects.Count;
+    }
 }

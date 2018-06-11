@@ -28,7 +28,7 @@ public class PlayerMovementController : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(delayForFightingAnimations);
+        //Debug.Log(delayForFightingAnimations);
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetBool("Punch", true);

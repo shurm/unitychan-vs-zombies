@@ -10,6 +10,7 @@ public class CollisionDetector : MonoBehaviour
 
     private Animator animator;
 
+    private bool collidedProperly = false;
 	// Use this for initialization
 	void Start ()
     {
@@ -28,11 +29,22 @@ public class CollisionDetector : MonoBehaviour
             {
                 if(currentAnimatorStateInfo.IsName(stateName))
                 {
-                    specialCollisionHandler.HandleCollision(other.gameObject);
+                    specialCollisionHandler.HandleStartOfCollision(other.gameObject);
+                    collidedProperly = true;
                     return;
                 }
             }      
         }
     }
    
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(collidedProperly)
+        {
+            specialCollisionHandler.HandleEndOfCollision(other.gameObject);
+            collidedProperly = false;
+        }
+    }
+
 }

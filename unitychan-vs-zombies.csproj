@@ -90,13 +90,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AgentLinkMover.cs" />
     <Compile Include="Assets\AnimatorTest.cs" />
     <Compile Include="Assets\Camera Scripts\DungeonCamera.cs" />
     <Compile Include="Assets\Camera Scripts\FollowCamera.cs" />
     <Compile Include="Assets\Camera Scripts\LookAtCamera.cs" />
     <Compile Include="Assets\Camera Scripts\MouseAimCamera.cs" />
-    <Compile Include="Assets\CollisionHandleTest.cs" />
     <Compile Include="Assets\DisplayScore.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
@@ -139,20 +137,20 @@
     <Compile Include="Assets\GameOverChecker.cs" />
     <Compile Include="Assets\InputTest.cs" />
     <Compile Include="Assets\MainMenuTest2.cs" />
+    <Compile Include="Assets\Scripts\AgentLinkMover.cs" />
     <Compile Include="Assets\Scripts\CollisionDetector.cs" />
-    <Compile Include="Assets\Scripts\director.cs" />
+    <Compile Include="Assets\Scripts\Director.cs" />
     <Compile Include="Assets\Scripts\GeneralZombieBehavior.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\HealthBarController.cs" />
     <Compile Include="Assets\Scripts\LevelTextDisplayer.cs" />
     <Compile Include="Assets\Scripts\MainMenuTest.cs" />
-    <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\PlayerAttackManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementController.cs" />
     <Compile Include="Assets\Scripts\Radar.cs" />
     <Compile Include="Assets\Scripts\SpecialCollisionHandler.cs" />
-    <Compile Include="Assets\Scripts\zombie.cs" />
     <Compile Include="Assets\Scripts\ZombieCollisionHandler.cs" />
+    <Compile Include="Assets\Scripts\ZombieSpawnManager.cs" />
     <Compile Include="Assets\TestZombieSpawn.cs" />
     <Compile Include="Assets\TriggerTest.cs" />
     <Compile Include="Assets\Unity UI\Scripts\ActiveStateToggler.cs" />

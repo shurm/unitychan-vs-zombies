@@ -8,9 +8,18 @@ public class ZombieCollisionHandler : MonoBehaviour
     public int angleFaceing = 40;
     public string TagOfTarget;
 
+    private GeneralZombieBehavior zombieBehavior;
 
-    private NavMeshAgent navMeshAgent;
+    //private NavMeshAgent navMeshAgent;
     private int damage = 1;
+
+    // Use this for initialization
+    void Start()
+    {
+        //navMeshAgent = GetComponent<NavMeshAgent>();
+        zombieBehavior = GetComponent<GeneralZombieBehavior>();
+    }
+
     void HandleCollision(GameObject gameObject)
     {
         if (!(gameObject.CompareTag(TagOfTarget)))
@@ -18,7 +27,7 @@ public class ZombieCollisionHandler : MonoBehaviour
 
         Health playersHealth = gameObject.GetComponentInParent<Health>();
        
-        if (!navMeshAgent.isStopped && facingEachOther(gameObject))
+        if (!zombieBehavior.IsDead() && facingEachOther(gameObject))
         {
             //anim.Play("attack");
            Debug.Log("damaged "+playersHealth.name);
@@ -50,14 +59,7 @@ public class ZombieCollisionHandler : MonoBehaviour
         return false;
 
     }
-    // Use this for initialization
-    void Start () {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-	}
+    
 	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+	
 }

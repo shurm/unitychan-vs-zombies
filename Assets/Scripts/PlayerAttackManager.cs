@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 
 public class PlayerAttackManager : SpecialCollisionHandler
 {
@@ -10,34 +10,25 @@ public class PlayerAttackManager : SpecialCollisionHandler
     public int attackDamage = 1;
 
     public DisplayScore score;
+    
 
-    public LevelTextDisplayer LevelTextDisplayer;
-
-    private director zombieSpawnScript;
-
-    // Use this for initialization
-    void Start ()
-    {
-        zombieSpawnScript = GameObject.Find("ZombieSpawnLocations").GetComponent<director>();
-    }
-
-    public override void HandleCollision(GameObject gameObject)
+    public override void HandleStartOfCollision(GameObject gameObject)
     {
         GeneralZombieBehavior script = gameObject.GetComponentInParent<GeneralZombieBehavior>();
+        NavMeshAgent navMeshAgentScript = gameObject.GetComponentInParent<NavMeshAgent>();
+        navMeshAgentScript.isStopped = true;
+
         bool zombieDestroyed = script.DamageZombie(attackDamage);
 
         if (zombieDestroyed)
         {
             score.UpdateScore(zombiePoints);
-
-            /*
-            if()
-            {
-
-                LevelTextDisplayer.StartNextLevelAnimation();
-            }
-            */
         }
+    }
 
+    public override void HandleEndOfCollision(GameObject gameObject)
+    {
+        NavMeshAgent navMeshAgentScript = gameObject.GetComponentInParent<NavMeshAgent>();
+        navMeshAgentScript.isStopped = false;
     }
 }

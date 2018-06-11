@@ -5,5 +5,6 @@ using UnityEngine;
 public abstract class  SpecialCollisionHandler : MonoBehaviour
 {
     public string TagOfTarget;
-    public abstract void HandleCollision(GameObject gameObject);
+    public abstract void HandleStartOfCollision(GameObject gameObject);
+    public abstract void HandleEndOfCollision(GameObject gameObject);
 }

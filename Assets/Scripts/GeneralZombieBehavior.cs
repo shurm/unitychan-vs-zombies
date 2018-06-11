@@ -9,6 +9,8 @@ public class GeneralZombieBehavior : MonoBehaviour
 
     public Radar radar;
 
+    public Director director;
+
     public int hitsItCanTake = 1;
 
     private static readonly float time = 3;
@@ -26,12 +28,6 @@ public class GeneralZombieBehavior : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         dead = false;
-        /*
-        if (target == null)
-            target = GameObject.Find("unitychan").transform;
-        if(radar == null)
-            radar = GameObject.Find("Radar").GetComponent<Radar>();
-       */
     }
 
     // Update is called once per frame
@@ -60,6 +56,7 @@ public class GeneralZombieBehavior : MonoBehaviour
     private void RemoveZombie()
     {
         radar.RemoveRaderObject(gameObject);
+        director.NextLevelCheck();
         Destroy(gameObject);
     }
 
@@ -71,10 +68,7 @@ public class GeneralZombieBehavior : MonoBehaviour
         {
             anim.Play("back_fall");
             dead = true;
-            //director.GetComponent<director>().zombieDead();
-            //target.GetComponent<player>().increaseScore();
             Invoke("RemoveZombie", 1.2f);
-
             return true;
         }
         return false;
