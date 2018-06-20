@@ -9,7 +9,10 @@ public class Director : MonoBehaviour {
     public Radar radar;
 
     private ZombieSpawnManager zombieSpawnManager;
+    private readonly object syncLock = new object();
+    private bool currentlyInUse = false;
 
+    private int level = 1;
     // Use this for initialization
     void Start ()
     {
@@ -27,14 +30,30 @@ public class Director : MonoBehaviour {
     }
     private void StartSpawningAndTextAnimation()
     {
+        Debug.Log("level " + level);
+        level++;
         levelTextDisplayer.StartLevelTextAnimation();
         zombieSpawnManager.StartSpawning();
     }
 
+
     internal void NextLevelCheck()
     {
-        if (radar.NoObjectsOnMap())
-            BeginNextLevel();
-        
+        if (!currentlyInUse)
+        { 
+            lock (syncLock)
+            {
+                currentlyInUse = true;
+                Debug.Log("called");
+
+                if (radar.NoObjectsOnMap())
+                {
+                    BeginNextLevel();
+                }
+
+                currentlyInUse = false;
+            }
+        }
     }
+    
 }

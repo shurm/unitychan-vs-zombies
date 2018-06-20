@@ -26,6 +26,7 @@ public class GeneralZombieBehavior : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
         anim = GetComponent<Animator>();
         dead = false;
     }
