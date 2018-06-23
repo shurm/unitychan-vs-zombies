@@ -137,6 +137,7 @@
     <Compile Include="Assets\GameOverChecker.cs" />
     <Compile Include="Assets\InputTest.cs" />
     <Compile Include="Assets\MainMenuTest2.cs" />
+    <Compile Include="Assets\ScenePreviewLoader.cs" />
     <Compile Include="Assets\Scripts\AgentLinkMover.cs" />
     <Compile Include="Assets\Scripts\CollisionDetector.cs" />
     <Compile Include="Assets\Scripts\Director.cs" />
