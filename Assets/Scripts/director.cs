@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Director : MonoBehaviour {
+public class Director : MonoBehaviour
+{
 
     public LevelTextDisplayer levelTextDisplayer;
     public RadarData radar;

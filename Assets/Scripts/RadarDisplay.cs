@@ -15,7 +15,7 @@ public class RadarDisplay : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        radarData = GetComponentInParent<RadarData>();
+        radarData = GameObject.Find("Radar").GetComponent<RadarData>();
         player = radarData.player;
 
     }
@@ -31,7 +31,7 @@ public class RadarDisplay : MonoBehaviour {
             radarPos.x = distToObject * Mathf.Cos(deltay * Mathf.Deg2Rad) * -1;
             radarPos.z = distToObject * Mathf.Sin(deltay * Mathf.Deg2Rad);
 
-            //ro.icon.transform.SetParent(transform);
+            ro.icon.transform.SetParent(transform);
             ro.icon.transform.position = new Vector3(radarPos.x, radarPos.z, 0) + transform.position;
         }
     }
