@@ -3,23 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RaderObject
-{
-    public Image icon { get; set; }
-    public GameObject owner { get; set; }
-}
-[System.Serializable]
-public class TagImagePair
-{
-    public string tag;
-    public Image icon;
-}
 public class Radar : MonoBehaviour
 {
     public Transform player;
     public List<TagImagePair> recognizedTagImagePairs;
 
-    private List<RaderObject> radarObjects = new List<RaderObject>();
+    private List<RadarObject> radarObjects = new List<RadarObject>();
 
     public float mapScale = 1.0f;
     
@@ -32,8 +21,8 @@ public class Radar : MonoBehaviour
     {
         Image imageicon = CreateImageIcon(newGameObject.tag);
 
-        RaderObject newRaderObject = new RaderObject() { owner = newGameObject, icon = imageicon };
-        radarObjects.Add(newRaderObject);
+        RadarObject newRadarObject = new RadarObject() { owner = newGameObject, icon = imageicon };
+        radarObjects.Add(newRadarObject);
     }
 
     private Image CreateImageIcon(string tag)
@@ -44,10 +33,10 @@ public class Radar : MonoBehaviour
 
         return null;
     }
-    public void RemoveRaderObject(GameObject gameObject)
+    public void RemoveRadarObject(GameObject gameObject)
     {
-        List<RaderObject> tempList = new List<RaderObject>();
-        foreach (RaderObject ro in radarObjects)
+        List<RadarObject> tempList = new List<RadarObject>();
+        foreach (RadarObject ro in radarObjects)
         {
             if (ro.owner != gameObject)
                 tempList.Add(ro);
@@ -60,7 +49,7 @@ public class Radar : MonoBehaviour
 
     private void DrawRadarDots()
     {
-        foreach(RaderObject ro in radarObjects)
+        foreach(RadarObject ro in radarObjects)
         {
             Vector3 radarPos = (ro.owner.transform.position - player.position);
             float distToObject = Vector3.Distance(player.position, ro.owner.transform.position) * mapScale;

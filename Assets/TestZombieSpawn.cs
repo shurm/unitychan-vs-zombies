@@ -5,7 +5,7 @@ using UnityEngine;
 public class TestZombieSpawn : MonoBehaviour {
 
     public GameObject zombiePrefab;
-    public Radar rader;
+    public RadarData rader;
 
 	// Use this for initialization
 	void Start ()

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Director : MonoBehaviour {
 
     public LevelTextDisplayer levelTextDisplayer;
-    public Radar radar;
+    public RadarData radar;
 
     private ZombieSpawnManager zombieSpawnManager;
     private readonly object syncLock = new object();
@@ -14,7 +13,7 @@ public class Director : MonoBehaviour {
 
     private int level = 1;
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         if (levelTextDisplayer == null)
             levelTextDisplayer = GetComponent<LevelTextDisplayer>();
@@ -22,7 +21,7 @@ public class Director : MonoBehaviour {
 
         StartSpawningAndTextAnimation();
     }
-	
+
     private void BeginNextLevel()
     {
         levelTextDisplayer.IncrementLevel();
@@ -40,7 +39,7 @@ public class Director : MonoBehaviour {
     internal void NextLevelCheck()
     {
         if (!currentlyInUse)
-        { 
+        {
             lock (syncLock)
             {
                 currentlyInUse = true;
@@ -55,5 +54,4 @@ public class Director : MonoBehaviour {
             }
         }
     }
-    
 }

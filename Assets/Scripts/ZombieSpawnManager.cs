@@ -19,7 +19,7 @@ public class ZombieSpawnManager : MonoBehaviour {
     private int maxLevelZombies = 0;
     private Transform[] zombieSpawnLocations;
 
-    private Radar radar;
+    private RadarData radar;
     private GameObject player;
     private Director director;
 
@@ -33,7 +33,7 @@ public class ZombieSpawnManager : MonoBehaviour {
             zombieSpawnLocations[a] = transform.GetChild(a);
 
 
-        radar = GameObject.Find("Radar").GetComponent<Radar>();
+        radar = GameObject.Find("Radar").GetComponent<RadarData>();
         player = GameObject.Find("unitychan");
         director = GameObject.Find("PlayerCameraUI").GetComponent<Director>();
 

@@ -149,7 +149,12 @@
     <Compile Include="Assets\Scripts\PlayerAttackManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMovementController.cs" />
     <Compile Include="Assets\Scripts\Radar.cs" />
+    <Compile Include="Assets\Scripts\RadarData.cs" />
+    <Compile Include="Assets\Scripts\RadarDisplay.cs" />
+    <Compile Include="Assets\Scripts\RadarInputManager.cs" />
+    <Compile Include="Assets\Scripts\RadarObject.cs" />
     <Compile Include="Assets\Scripts\SpecialCollisionHandler.cs" />
+    <Compile Include="Assets\Scripts\TagImagePair.cs" />
     <Compile Include="Assets\Scripts\ZombieCollisionHandler.cs" />
     <Compile Include="Assets\Scripts\ZombieSpawnManager.cs" />
     <Compile Include="Assets\TestZombieSpawn.cs" />

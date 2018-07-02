@@ -7,7 +7,7 @@ public class GeneralZombieBehavior : MonoBehaviour
 {
     public Transform target;
 
-    public Radar radar;
+    public RadarData radar;
 
     public Director director;
 
@@ -56,7 +56,7 @@ public class GeneralZombieBehavior : MonoBehaviour
 
     private void RemoveZombie()
     {
-        radar.RemoveRaderObject(gameObject);
+        radar.RemoveRadarObject(gameObject);
         director.NextLevelCheck();
         Destroy(gameObject);
     }

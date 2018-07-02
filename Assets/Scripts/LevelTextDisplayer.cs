@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LevelTextDisplayer : MonoBehaviour
 {
-    public Radar radar;
+    public RadarData radar;
     public Text levelText;
     public int currentLevel = 1;
 
