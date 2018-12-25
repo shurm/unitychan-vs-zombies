@@ -11,17 +11,19 @@ public class GeneralZombieBehavior : MonoBehaviour
 
     public Director director;
 
-    public int hitsItCanTake = 1;
+    public int hitsItCanTake;
 
-    private static readonly float time = 3;
+    public float turningSpeed;
+
+    public float sensingDistance = 1.0f;
 
     private NavMeshAgent agent;
+
     private Animator anim;
 
     private bool dead;
 
-    private float timeLeft = 0;
-
+   
     // Use this for initialization
     void Start()
     {
@@ -38,9 +40,24 @@ public class GeneralZombieBehavior : MonoBehaviour
         
         if (!dead)
         {
-            agent.SetDestination(target.position);
-            if (agent.remainingDistance < 1.0f)
-                transform.LookAt(target.position);
+            //agent.SetDestination(target.position);
+            if (agent.remainingDistance <= sensingDistance)
+            {
+
+                Vector3 distance = target.position - transform.position;
+
+                // The step size is equal to speed times frame time.
+                float step = turningSpeed * Time.deltaTime;
+
+                Vector3 dummyPosition = transform.position + (transform.forward * distance.magnitude);
+                Vector3 targetPosition = Vector3.Lerp(dummyPosition, target.position, step);
+                targetPosition.y = this.transform.position.y;
+
+
+                // Move our position a step closer to the target.
+                transform.LookAt(targetPosition);
+            
+            }
             else
                 transform.LookAt(agent.nextPosition);
         }
