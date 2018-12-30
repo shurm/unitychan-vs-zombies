@@ -433,6 +433,7 @@
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Sci-fi_platforms\Sci-fi_platforms.txt" />
+    <None Include="Assets\Standard Assets\Shaders\DifSpecTransp.shader" />
     <None Include="Assets\Unity UI\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\Unity UI\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\Unity UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />

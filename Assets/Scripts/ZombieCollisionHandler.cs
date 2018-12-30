@@ -57,7 +57,7 @@ public class ZombieCollisionHandler : MonoBehaviour
 
         Health playersHealth = gameObject.GetComponentInParent<Health>();
        
-        if (!currentlyBeingAttacked && !zombieBehavior.IsDead() && damageDelay <= 0)
+        if (!currentlyBeingAttacked && !zombieBehavior.IsDead() && damageDelay <= 0 && facingEachOther(gameObject))
         {
            anim.Play("attack");
            Debug.Log("damaged "+playersHealth.name);
