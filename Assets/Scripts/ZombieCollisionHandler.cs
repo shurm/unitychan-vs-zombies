@@ -9,7 +9,9 @@ public class ZombieCollisionHandler : MonoBehaviour
 
     private float damageDelayCopy;
 
-    public int angleFaceing = 40;
+    [Range(0,180)]
+    public float facingPlayerAngleThreshold;
+
     public string TagOfTarget;
 
     private GeneralZombieBehavior zombieBehavior;
@@ -57,7 +59,7 @@ public class ZombieCollisionHandler : MonoBehaviour
 
         Health playersHealth = gameObject.GetComponentInParent<Health>();
        
-        if (!currentlyBeingAttacked && !zombieBehavior.IsDead() && damageDelay <= 0 && facingEachOther(gameObject))
+        if (!currentlyBeingAttacked && !zombieBehavior.IsDead() && damageDelay <= 0 && IsFacingPlayer(gameObject))
         {
            anim.Play("attack");
            Debug.Log("damaged "+playersHealth.name);
@@ -89,10 +91,18 @@ public class ZombieCollisionHandler : MonoBehaviour
     }
 
     //Should just care if zombie is facing player
-    private bool facingEachOther(GameObject gameObject)
+    private bool IsFacingPlayer(GameObject player)
     {
-        if (Mathf.Abs(Vector3.Angle(transform.forward, gameObject.transform.forward) - 180) < angleFaceing)
+   
+        
+        float facingAngleBetweenThisZombieAndPlayer = Vector3.Angle(transform.forward, player.transform.position - transform.position);
+
+        //Debug.Log(facingPlayerAngleThreshold);
+        if (facingAngleBetweenThisZombieAndPlayer < facingPlayerAngleThreshold)
+        {
             return true;
+        }
+       
         return false;
 
     }

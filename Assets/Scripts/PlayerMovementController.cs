@@ -7,7 +7,7 @@ public class PlayerMovementController : MonoBehaviour
     public float runSpeed = 3;
     public float walkSpeed = 2;
 
-    public float delayForFightingAnimations = 0.15f;
+    public float delayForFightingAnimations = 0.2f;
 
     private float currentSpeed;
     private Animator anim;
@@ -15,6 +15,12 @@ public class PlayerMovementController : MonoBehaviour
 
     private float delayForFightingAnimationsCopy;
 
+    public float currentDirectionInput = 0;
+    public float currentDirection = 0;
+    public float timeDelta = 0;
+
+    public float timeDeltaDirectionScale = 0.075f;
+    private Vector2 t1 = Vector2.zero, t2 = Vector2.zero, l = Vector2.zero;
     // Use this for initialization
     void Start()
     {
@@ -27,7 +33,7 @@ public class PlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
         //Debug.Log(delayForFightingAnimations);
         if (Input.GetMouseButtonDown(0))
         {
@@ -46,17 +52,31 @@ public class PlayerMovementController : MonoBehaviour
             else
                 run = false;
 
-            float direction = Input.GetAxis("Horizontal");
+            currentDirectionInput = Input.GetAxis("Horizontal");
 
             float speed = Input.GetAxis("Vertical");
             if (speed < 0)
                 speed = 0;
 
             anim.SetFloat("Speed", speed);
-            anim.SetFloat("Direction", direction);
+
+            if (currentDirectionInput != currentDirection)
+            {
+                timeDelta += (Time.deltaTime * timeDeltaDirectionScale);
+                t1.y = currentDirection;
+                t2.y = currentDirectionInput;
+                l = Vector2.Lerp(t1, t2, timeDelta);
+                currentDirection = l.y;
+
+            }
+            else
+            {
+                timeDelta = 0;
+            }
+            anim.SetFloat("Direction", currentDirection);
             anim.SetBool("run", run);
 
-            float moveX = direction * 100f * Time.deltaTime;
+            float moveX = currentDirection * 100f * Time.deltaTime;
 
             //if player is running, player travels more distance (aka travels at higher velocity)
             if (run)
@@ -68,7 +88,7 @@ public class PlayerMovementController : MonoBehaviour
                 currentSpeed = walkSpeed;
 
             //rotates the player
-            if (direction != 0)
+            if (currentDirection != 0)
                 transform.Rotate(0, moveX, 0, Space.World);
 
             if (speed > 0)

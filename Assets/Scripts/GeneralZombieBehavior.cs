@@ -15,12 +15,10 @@ public class GeneralZombieBehavior : MonoBehaviour
 
     public float turningSpeed;
 
-    public float sensingDistance = 1.0f;
+    public float sensingDistance;
 
     private NavMeshAgent agent;
-
     private Animator anim;
-
     private bool dead;
 
    
@@ -41,6 +39,13 @@ public class GeneralZombieBehavior : MonoBehaviour
         if (!dead)
         {
             //agent.SetDestination(target.position);
+
+            if(agent.isOnOffMeshLink)
+            {
+
+                return;
+            }
+
             if (agent.remainingDistance <= sensingDistance)
             {
 
@@ -84,10 +89,14 @@ public class GeneralZombieBehavior : MonoBehaviour
 
         if(hitsItCanTake<=0)
         {
-            anim.Play("back_fall");
+            anim.SetBool("fall_back", true);
             dead = true;
             Invoke("RemoveZombie", 1.2f);
             return true;
+        }
+        else
+        {
+            anim.SetBool("stunned", true);
         }
         return false;
     }

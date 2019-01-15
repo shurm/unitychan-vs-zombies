@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Fantasy_sword_sample/sword_fighting_unitychan.unity
+- path: Assets/scenes/abandoned yard.unity
   isLoaded: 1
   isActive: 1

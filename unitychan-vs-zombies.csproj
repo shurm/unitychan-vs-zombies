@@ -383,6 +383,7 @@
     <Compile Include="Assets\Scripts\TagImagePair.cs" />
     <Compile Include="Assets\Scripts\ZombieCollisionHandler.cs" />
     <Compile Include="Assets\Scripts\ZombieSpawnManager.cs" />
+    <Compile Include="Assets\SwordAdapter.cs" />
     <Compile Include="Assets\TestZombieSpawn.cs" />
     <Compile Include="Assets\TriggerTest.cs" />
     <Compile Include="Assets\Unity UI\Scripts\ActiveStateToggler.cs" />
