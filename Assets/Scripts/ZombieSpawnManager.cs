@@ -21,7 +21,7 @@ public class ZombieSpawnManager : MonoBehaviour {
 
     private RadarData radar;
     private GameObject player;
-    private Director director;
+    private SceneDirector director;
 
     private readonly object syncLock = new object();
     // Use this for initialization
@@ -35,7 +35,7 @@ public class ZombieSpawnManager : MonoBehaviour {
 
         radar = GameObject.Find("Radar").GetComponent<RadarData>();
         player = GameObject.Find("unitychan");
-        director = GameObject.Find("PlayerCameraUI").GetComponent<Director>();
+        director = GameObject.Find("PlayerCameraUI").GetComponent<SceneDirector>();
 
         maxLevelZombies = startTotalZombies;
     }
@@ -58,10 +58,9 @@ public class ZombieSpawnManager : MonoBehaviour {
                     {
                         GameObject newZombie = Instantiate(zombie, zombieSpawnLocations[a].position, Quaternion.identity);
 
-                        GeneralZombieBehavior behaviorOfNewZombie = newZombie.GetComponent<GeneralZombieBehavior>();
-                        behaviorOfNewZombie.target = player.transform;
-                        behaviorOfNewZombie.radar = radar;
-                        behaviorOfNewZombie.director = director;
+                        ZombieEnvironmentVariables variablesToBeSet = newZombie.GetComponent<ZombieEnvironmentVariables>();
+                        variablesToBeSet.target = player.transform;
+                        variablesToBeSet.director = director;
 
                         radar.RegisterRadarObject(newZombie);
 

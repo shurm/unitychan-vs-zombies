@@ -36,6 +36,11 @@ public class Director : MonoBehaviour
         zombieSpawnManager.StartSpawning();
     }
 
+    internal void RemoveRadarObject(GameObject gameObject)
+    {
+        radar.RemoveRadarObject(gameObject);
+        NextLevelCheck();
+    }
 
     internal void NextLevelCheck()
     {
