@@ -17,7 +17,7 @@ public class ZombieMovement : MonoBehaviour
     public float sensingDistance;
 
     // Use this for initialization
-    void Start ()
+    void OnEnable ()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();

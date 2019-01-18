@@ -322,6 +322,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ErbGameArt\AnimeWeapon\Shaders\SwordLightning.shader" />
+    <None Include="Assets\FantasyEnvironments\Environments\README.txt" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Free_Rocks\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />

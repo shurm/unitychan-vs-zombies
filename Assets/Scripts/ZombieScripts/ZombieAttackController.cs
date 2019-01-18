@@ -34,7 +34,7 @@ public class ZombieAttackController : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start()
+    void OnEnable()
     {
         //navMeshAgent = GetComponent<NavMeshAgent>();
         zombieHealth = GetComponent<ZombieHealth>();
@@ -70,7 +70,7 @@ public class ZombieAttackController : MonoBehaviour
                 playersHealth.DealDamage(damagePlayerTakes);
                 damageDelay = damageDelayCopy;
 
-                // Debug.Log("colliding!!");
+                 Debug.Log("colliding!!");
             }
         }
         else
