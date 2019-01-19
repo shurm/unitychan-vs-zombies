@@ -40,7 +40,7 @@ public class ZombieAttackController : MonoBehaviour
         zombieHealth = GetComponent<ZombieHealth>();
         anim = GetComponent<Animator>();
         damageDelayCopy = damageDelay;
-        damageDelay = 0;
+        //damageDelay = 0;
     }
 
     void Update()
@@ -62,7 +62,7 @@ public class ZombieAttackController : MonoBehaviour
         if (!currentlyBeingAttacked && !zombieHealth.IsDead() && IsFacingPlayer(gameObject))
         {
             
-            anim.SetBool("attack",true);
+            anim.SetBool("Attacking", true);
             if(damageDelay <= 0) 
             { 
                 Debug.Log("damaged " + playersHealth.name);
@@ -70,12 +70,12 @@ public class ZombieAttackController : MonoBehaviour
                 playersHealth.DealDamage(damagePlayerTakes);
                 damageDelay = damageDelayCopy;
 
-                 Debug.Log("colliding!!");
+               // Debug.Log("damageDelay "+damageDelay);
             }
         }
         else
         {
-            anim.SetBool("attack", false);
+            anim.SetBool("Attacking", false);
         }
     }
     void OnTriggerEnter(Collider other)
