@@ -85,6 +85,6 @@ public class ZombieSpawnManager : MonoBehaviour
         }
 
 
-          Debug.Log(" , created: " + numberOfZombiesCreated + " , max: " + maxLevelZombies);
+        //  Debug.Log(" , created: " + numberOfZombiesCreated + " , max: " + maxLevelZombies);
     }
 }

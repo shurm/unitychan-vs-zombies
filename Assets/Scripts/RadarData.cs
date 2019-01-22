@@ -33,7 +33,7 @@ public class RadarData : MonoBehaviour
 
         return null;
     }
-    public void RemoveRadarObject(GameObject gameObject)
+    public bool RemoveRadarObject(GameObject gameObject)
     {
         List<RadarObject> tempList = new List<RadarObject>();
         foreach (RadarObject ro in radarObjects)
@@ -43,8 +43,15 @@ public class RadarData : MonoBehaviour
             else
                 Destroy(ro.icon);
         }
+        bool removed = true;
+        if (tempList.Count == radarObjects.Count)
+        {
+            removed = false;
+        }
 
         radarObjects = tempList;
+
+        return removed;
     }
 
    

@@ -13,6 +13,7 @@ public class ZombieMovement : MonoBehaviour
     private Transform target;
     private SceneDirector director;
 
+    [Range(0, 2)]
     public float turningSpeed;
     public float sensingDistance;
 
@@ -33,7 +34,7 @@ public class ZombieMovement : MonoBehaviour
     {
         if (!currentZombieHealth.IsDead())
         {
-            agent.SetDestination(target.position);
+            //agent.SetDestination(target.position);
 
           
 
@@ -52,6 +53,7 @@ public class ZombieMovement : MonoBehaviour
 
                 // Move our position a step closer to the target.
                 transform.LookAt(targetPosition);
+                //agent.isStopped = true;
 
             }
             else

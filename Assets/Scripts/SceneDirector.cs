@@ -9,8 +9,7 @@ public class SceneDirector : MonoBehaviour
 
     private ZombieSpawnManager zombieSpawnManager;
     private readonly object syncLock = new object();
-    private bool currentlyInUse = false;
-
+   
     private int level = 1;
     // Use this for initialization
     void Start()
@@ -37,25 +36,14 @@ public class SceneDirector : MonoBehaviour
 
     internal void RemoveRadarObject(GameObject gameObject)
     {
-        radar.RemoveRadarObject(gameObject);
-        NextLevelCheck();
-    }
-
-    private void NextLevelCheck()
-    {
-        if (!currentlyInUse)
+        lock (syncLock)
         {
-            lock (syncLock)
+            if(radar.RemoveRadarObject(gameObject))
             {
-                currentlyInUse = true;
-                Debug.Log("called");
-
                 if (radar.NoObjectsOnMap())
                 {
                     BeginNextLevel();
                 }
-
-                currentlyInUse = false;
             }
         }
     }

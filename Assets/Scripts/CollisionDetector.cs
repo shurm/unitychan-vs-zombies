@@ -11,6 +11,7 @@ public class CollisionDetector : MonoBehaviour
     private Animator animator;
 
     private bool collidedProperly = false;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -38,7 +39,7 @@ public class CollisionDetector : MonoBehaviour
     }
    
 
-    private void OnTriggerExit(Collider other)
+        private void OnTriggerExit(Collider other)
     {
         if(collidedProperly)
         {

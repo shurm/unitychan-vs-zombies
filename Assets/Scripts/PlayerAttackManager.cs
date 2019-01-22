@@ -16,8 +16,9 @@ public class PlayerAttackManager : SpecialCollisionHandler
     {
         ZombieHealth script = gameObject.GetComponentInParent<ZombieHealth>();
         ZombieAttackController zombieAttackScript = gameObject.GetComponentInParent<ZombieAttackController>();
-        zombieAttackScript.CurrentlyBeingAttacked = true;
+        //zombieAttackScript.CurrentlyBeingAttacked = true;
 
+        //Debug.Log(gameObject.name + " collided with " + name);
 
         NavMeshAgent navMeshAgentScript = gameObject.GetComponentInParent<NavMeshAgent>();
         navMeshAgentScript.isStopped = true;
@@ -32,10 +33,11 @@ public class PlayerAttackManager : SpecialCollisionHandler
 
     public override void HandleEndOfCollision(GameObject gameObject)
     {
+        Debug.Log("fmfmfmf");
         NavMeshAgent navMeshAgentScript = gameObject.GetComponentInParent<NavMeshAgent>();
         navMeshAgentScript.isStopped = false;
 
         ZombieAttackController zombieAttackScript = gameObject.GetComponentInParent<ZombieAttackController>();
-        zombieAttackScript.CurrentlyBeingAttacked = false;
+        //zombieAttackScript.CurrentlyBeingAttacked = false;
     }
 }

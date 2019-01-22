@@ -9,15 +9,48 @@ public class ZombieHealth : MonoBehaviour
     
     public int currentAttackTolerance;
 
+    public float delayBetweenAttacksFromPlayer;
+
     private Transform target;
     private SceneDirector director;
 
     private NavMeshAgent agent;
     private Animator anim;
 
-    private bool wasAttacked = false;
+    private bool currentlyBeingAttacked = false;
+
+
+
+    public float TimeSinceLastAttacked
+    {
+        get
+        {
+            return timeSinceLastAttacked;
+        }
+
+        set
+        {
+            timeSinceLastAttacked = value;
+        }
+    }
+
+    private float timeSinceLastAttacked;
+    public bool CurrentlyBeingAttacked
+    {
+        get
+        {
+            return currentlyBeingAttacked;
+        }
+
+        set
+        {
+            currentlyBeingAttacked = value;
+        }
+    }
+
     void OnEnable()
     {
+        timeSinceLastAttacked = 0;
         anim = GetComponent<Animator>();
 
         agent = GetComponent<NavMeshAgent>();
@@ -32,15 +65,16 @@ public class ZombieHealth : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("stunned"))
         {
             anim.SetBool("BeingAttacked", false);
-            wasAttacked = true;
+            CurrentlyBeingAttacked = true;
         }
 
-        if (wasAttacked == true  && !anim.GetCurrentAnimatorStateInfo(0).IsName("stunned"))
+        if (CurrentlyBeingAttacked == true  && !anim.GetCurrentAnimatorStateInfo(0).IsName("stunned"))
         {
             agent.isStopped = false;
-            wasAttacked = false;
+            CurrentlyBeingAttacked = false;
 
         }
+        TimeSinceLastAttacked += Time.deltaTime;
     }
     public bool IsDead()
     {
@@ -60,11 +94,15 @@ public class ZombieHealth : MonoBehaviour
 
     public bool TakeDamage(int damage)
     {
-        Debug.Log("take Damage called");
+        if (TimeSinceLastAttacked < delayBetweenAttacksFromPlayer)
+            return false;
+
+        //Debug.Log("take Damage called");
         currentAttackTolerance -= damage;
         agent.isStopped = true;
-
-        Debug.Log("currentAttackTolerance is "+ currentAttackTolerance);
+        CurrentlyBeingAttacked = true;
+        timeSinceLastAttacked = 0;
+        //Debug.Log("currentAttackTolerance is "+ currentAttackTolerance);
         if (currentAttackTolerance <= 0)
         {
             anim.SetBool("Dead", true);

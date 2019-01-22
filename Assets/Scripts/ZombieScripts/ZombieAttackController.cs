@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ZombieAttackController : MonoBehaviour
 {
@@ -14,22 +15,26 @@ public class ZombieAttackController : MonoBehaviour
     public string TagOfTarget;
 
     private ZombieHealth zombieHealth;
+    
 
     //private NavMeshAgent navMeshAgent;
     public int damagePlayerTakes = 5;
-    private bool currentlyBeingAttacked = false;
+   
     private Animator anim;
 
-    public bool CurrentlyBeingAttacked
+    private bool currentlyAttacking = false;
+
+
+    public bool CurrentlyAttacking
     {
         get
         {
-            return currentlyBeingAttacked;
+            return currentlyAttacking;
         }
 
         set
         {
-            currentlyBeingAttacked = value;
+            currentlyAttacking = value;
         }
     }
 
@@ -40,44 +45,58 @@ public class ZombieAttackController : MonoBehaviour
         zombieHealth = GetComponent<ZombieHealth>();
         anim = GetComponent<Animator>();
         damageDelayCopy = damageDelay;
-        //damageDelay = 0;
+
     }
 
     void Update()
     {
         if (damageDelay > 0)
             damageDelay -= Time.deltaTime;
+
+  
+    }
+       
+    private void LateUpdate()
+    {
+            anim.SetBool("Attacking", false);
+
+        
     }
 
     void HandleCollision(GameObject gameObject)
     {
-        //checks if the game the zombie collided with is the player
+        //checks if the gameobject the zombie collided with is the player
         if (!(gameObject.CompareTag(TagOfTarget)))
             return;
+
+        CheckForAnimation attackAnimationCheckScript = gameObject.GetComponent<CheckForAnimation>();
+        if (attackAnimationCheckScript != null && gameObject.GetComponent<CheckForAnimation>().CheckForAttackAnimation())
+        {
+            zombieHealth.TakeDamage();
+            return;
+        }
+        Debug.Log(gameObject.name + " collided with " + name);
 
         Health playersHealth = gameObject.GetComponentInParent<Health>();
 
         //deal damage to the player only if this zombie is not being attacked by the player, this zombie is not dead (aka killed by the player already),
         //and is mostly facing the player
-        if (!currentlyBeingAttacked && !zombieHealth.IsDead() && IsFacingPlayer(gameObject))
+        if (!zombieHealth.CurrentlyBeingAttacked && !zombieHealth.IsDead() && IsFacingPlayer(gameObject))
         {
             
             anim.SetBool("Attacking", true);
-            if(damageDelay <= 0) 
+            CurrentlyAttacking = true;
+            if (damageDelay <= 0) 
             { 
-                Debug.Log("damaged " + playersHealth.name);
+               // Debug.Log("damaged " + playersHealth.name);
 
                 playersHealth.DealDamage(damagePlayerTakes);
                 damageDelay = damageDelayCopy;
-
-               // Debug.Log("damageDelay "+damageDelay);
             }
         }
-        else
-        {
-            anim.SetBool("Attacking", false);
-        }
+      
     }
+
     void OnTriggerEnter(Collider other)
     {
         HandleCollision(other.gameObject);
@@ -87,6 +106,7 @@ public class ZombieAttackController : MonoBehaviour
     {
         HandleCollision(other.gameObject);
     }
+    
 
     void OnCollisionEnter(Collision other)
     {
@@ -97,6 +117,9 @@ public class ZombieAttackController : MonoBehaviour
     {
         HandleCollision(other.gameObject);
     }
+    
+
+
 
     //Should just care if zombie is just facing player
     private bool IsFacingPlayer(GameObject player)

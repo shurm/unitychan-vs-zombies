@@ -365,6 +365,7 @@
     <Compile Include="Assets\MainMenuTest2.cs" />
     <Compile Include="Assets\ScenePreviewLoader.cs" />
     <Compile Include="Assets\Scripts\AgentLinkMover.cs" />
+    <Compile Include="Assets\Scripts\CheckForAnimation.cs" />
     <Compile Include="Assets\Scripts\CollisionDetector.cs" />
     <Compile Include="Assets\Scripts\director.cs" />
     <Compile Include="Assets\Scripts\GeneralZombieBehavior.cs" />
